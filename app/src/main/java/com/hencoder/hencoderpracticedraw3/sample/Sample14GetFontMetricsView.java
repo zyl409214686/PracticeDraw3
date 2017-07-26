@@ -35,6 +35,10 @@ public class Sample14GetFontMetricsView extends View {
         paint2.setTextSize(160);
 
         Paint.FontMetrics fontMetrics = paint2.getFontMetrics();
+        //fontMetrics.ascent: -148 , fontMetrics.descent: 39
+        //取中间坐标， -(ascent+descent)/2
+        //获取范围， 是一个左下角坐标 为（0，0）字体的矩阵，所以取出来的ascent 是负值。
+        //因为是负的值， 所以最后算出来的值要加-号。取得一个正数。
         yOffset = - (fontMetrics.ascent + fontMetrics.descent) / 2;
     }
 
